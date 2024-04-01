@@ -1,0 +1,243 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+// Fonts
+
+// Font Family
+
+$font-family: 'Barlow Semi Condensed', sans-serif;
+
+// Font Sizes
+
+$font-size-base: 0.8125rem;
+
+// Font Weights
+
+$font-weight-midium: 400;
+$font-weight-bold: 500;
+
+// Colors
+
+// Primary
+
+$primary-moderate-violet: hsl(263, 55%, 52%);
+$primary-very-dark-grayish-blue: hsl(217, 19%, 35%);
+$primary-very-dark-blackish-blue: hsl(219, 29%, 14%);
+$primary-white: hsl(0, 0%, 100%);
+
+// Neutral
+
+$neutral-light-gray: hsl(0, 0%, 81%);
+$neutral-moderate-violet-img-border: hsl(263, 76%, 63%);
+$neutral-light-gray-50: hsla(0, 0%, 81%, 0.51);
+$neutral-light-gray-70: hsla(0, 0%, 81%, 0.702);
+$neutral-light-grayish-blue: hsl(210, 46%, 95%);
+
+// Widths
+
+$max-width-body: 1440px;
+$min-width-body: 375px;
+
+// Heights
+
+$min-height-body: 100vh;
+
+// CSS Resets
+
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+/*
+  2. Remove default margin
+*/
+* {
+  margin: 0;
+}
+/*
+  Typographic tweaks!
+  3. Add accessible line-height
+  4. Improve text rendering
+*/
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+/*
+  5. Improve media defaults
+*/
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+/*
+  6. Remove built-in form typography styles
+*/
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+/*
+  7. Avoid text overflows
+*/
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+/*
+  8. Create a root stacking context
+*/
+#root,
+#__next {
+  isolation: isolate;
+}
+
+// Custom Styling
+
+html {
+  font-size: $font-size-base;
+  font-family: $font-family;
+  color: $primary-white;
+}
+
+body {
+  max-width: 1440px;
+  min-width: 375px;
+
+  background-color: $neutral-light-grayish-blue;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-inline: auto;
+
+  min-height: 100vh;
+}
+
+.wrapper {
+  max-width: 1070px;
+  margin-inline: auto;
+}
+
+.testimonials-wrapper {
+  margin: 1rem;
+}
+
+.testimonials-grid {
+  display: grid;
+  grid-template-areas:
+    'testimonial-one testimonial-one testimonial-two testimonial-five'
+    'testimonial-three testimonial-four testimonial-four testimonial-five';
+  gap: 2rem;
+}
+
+article:nth-of-type(1) {
+  grid-area: testimonial-one;
+
+  .testimonial--color {
+    background-color: $primary-moderate-violet;
+    background-image: url('/images/bg-pattern-quotation.svg');
+    background-repeat: no-repeat;
+    background-position: right 50px top;
+  }
+}
+
+article:nth-of-type(2) {
+  grid-area: testimonial-two;
+
+  .testimonial--color {
+    background-color: $primary-very-dark-grayish-blue;
+  }
+}
+
+article:nth-of-type(3) {
+  grid-area: testimonial-three;
+
+  .testimonial--color {
+    background-color: $primary-white;
+  }
+}
+
+article:nth-of-type(4) {
+  grid-area: testimonial-four;
+
+  .testimonial--color {
+    background-color: $primary-very-dark-blackish-blue;
+  }
+}
+
+article:nth-of-type(5) {
+  grid-area: testimonial-five;
+
+  .testimonial--color {
+    background-color: $primary-white;
+  }
+}
+
+.testimonial {
+  padding-block: 2em;
+  padding-inline: 2.5em;
+
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
+  border-radius: 10px;
+
+  box-shadow: 0px 0px 20px $neutral-light-grayish-blue;
+
+  &__author {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+    &__image {
+      img {
+        width: 35px;
+        height: 35px;
+
+        border-radius: 50%;
+        border: 2px solid $neutral-moderate-violet-img-border;
+      }
+    }
+
+    .testimonial__author__details {
+      display: flex;
+      flex-direction: column;
+
+      .name {
+        color: $neutral-light-gray;
+      }
+
+      .status {
+        color: $neutral-light-gray-50;
+      }
+    }
+  }
+
+  &__title {
+    font-size: 1.4rem;
+    font-weight: $font-weight-bold;
+  }
+
+  &__body {
+    font-size: 1rem;
+    font-weight: $font-weight-midium;
+    color: $neutral-light-gray-70;
+  }
+}

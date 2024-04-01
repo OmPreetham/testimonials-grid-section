@@ -11,27 +11,25 @@ const TestimonialsGridSection = () => {
                 return (
                   <article key={index}>
                     <div className="testimonial testimonial--color">
-                      <div className="testimonial__author-wrapper">
-                        <img
-                          className="tesimonial__author__image"
-                          src={`/images/${testimonial.imageName}`}
-                          alt={testimonial.firstName}
-                        />
-                        <p className="testimonial__author__name">
-                          {testimonial.firstName} {testimonial.lastName}
-                        </p>
-                        <br />
-                        <p className="testimonial__author__status">
-                          Verified Graduate
-                        </p>
+                      <div className="testimonial__author">
+                        <div className="testimonial__author__image">
+                          <img
+                            src={`/images/${testimonial.imageName}`}
+                            alt={testimonial.firstName}
+                          />
+                        </div>
+                        <div className="testimonial__author__details">
+                          <p className="name">
+                            {testimonial.firstName} {testimonial.lastName}
+                          </p>
+                          <p className="status">Verified Graduate</p>
+                        </div>
                       </div>
-                      <div className="testimonial__title-wrapper">
-                        <h2 className="testimonial__title">
-                          {testimonial.title}
-                        </h2>
+                      <div className="testimonial__title">
+                        <p className="title">{testimonial.title}</p>
                       </div>
-                      <div className="testimonial__body-wrapper">
-                        <p className="testimonial__body">{testimonial.body}</p>
+                      <div className="testimonial__body">
+                        <p className="body">{testimonial.body}</p>
                       </div>
                     </div>
                   </article>
