@@ -19,6 +19,10 @@ Desktop
 
 ![Desktop Preview](/public/preview-desktop.png)
 
+Tablet
+
+![Tablet Preview](/public/preview-tablet.png)
+
 Mobile
 
 ![Mobile Preview](/public/preview-mobile.png)
