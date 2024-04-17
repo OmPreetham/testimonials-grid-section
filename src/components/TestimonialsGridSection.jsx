@@ -14,7 +14,7 @@ const TestimonialsGridSection = () => {
                       <div className="testimonial__author">
                         <div className="testimonial__author__image">
                           <img
-                            src={`/images/${testimonial.imageName}`}
+                            src={`images/${testimonial.imageName}`}
                             alt={testimonial.firstName}
                           />
                         </div>
